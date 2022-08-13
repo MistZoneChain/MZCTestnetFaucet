@@ -5,8 +5,12 @@ services:
     restart: always
     container_name: mzc-testnet-faucet
     volumes:
-      - "./app:/app/"
+      - ./config/keystore:/app/keystore
+      - ./config/password.txt:/app/password.txt
     ports:
       - "8080:8080"
     environment:
       - TZ=Asia/Shanghai
+      - WEB3_PROVIDER=https://msc-testnet.seaeye.cn
+      - KEYSTORE=/app/keystore
+    command: -httpport 8080 -queuecap 5 -faucet.amount 1 -faucet.minutes 5 -faucet.name Testnet

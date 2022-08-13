@@ -18,4 +18,4 @@
 .DS_Store
 
 password.txt
-/app/keystore/*
+/config/keystore/*
