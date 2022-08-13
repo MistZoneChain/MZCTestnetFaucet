@@ -28,6 +28,10 @@ RUN apk add --no-cache ca-certificates
 
 COPY --from=backend /backend-build/eth-faucet /app/eth-faucet
 
+ENV WEB3_PROVIDER=https://msc-testnet.seaeye.cn
+
+ENV KEYSTORE=/app/keystore
+
 EXPOSE 8080
 
-ENTRYPOINT ["/app/eth-faucet"]
+ENTRYPOINT ["/app/eth-faucet","-httpport","8080","-queuecap","5","-faucet.amount","1","-faucet.minutes","5","-faucet.name","Testnet"]

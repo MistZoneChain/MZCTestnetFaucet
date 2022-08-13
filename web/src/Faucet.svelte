@@ -6,11 +6,11 @@
   let address = null;
   let faucetInfo = {
     account: '0x0000000000000000000000000000000000000000',
-    network: 'testnet',
+    network: 'Testnet',
     payout: 1,
   };
 
-  $: document.title = `ETH ${capitalize(faucetInfo.network)} Faucet`;
+  $: document.title = `MZC ${capitalize(faucetInfo.network)} Faucet`;
 
   onMount(async () => {
     const res = await fetch('/api/info');
@@ -60,7 +60,7 @@
               <span class="icon">
                 <i class="fa fa-bath" />
               </span>
-              <span><b>ETH Faucet</b></span>
+              <span><b>MZC Testnet Faucet</b></span>
             </a>
           </div>
           <div id="navbarMenu" class="navbar-menu">
@@ -86,10 +86,10 @@
       <div class="container has-text-centered">
         <div class="column is-6 is-offset-3">
           <h1 class="title">
-            Receive {faucetInfo.payout} ETH per request
+            每次请求获得 {faucetInfo.payout} MZT
           </h1>
           <h2 class="subtitle">
-            Serving from {faucetInfo.account}
+            由 {faucetInfo.account} 地址提供
           </h2>
           <div class="box">
             <div class="field is-grouped">
@@ -98,7 +98,7 @@
                   bind:value={address}
                   class="input is-rounded"
                   type="text"
-                  placeholder="Enter your address"
+                  placeholder="请输入您的钱包地址"
                 />
               </p>
               <p class="control">
@@ -106,7 +106,7 @@
                   on:click={handleRequest}
                   class="button is-primary is-rounded"
                 >
-                  Request
+                  确认
                 </button>
               </p>
             </div>

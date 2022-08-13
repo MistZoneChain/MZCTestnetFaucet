@@ -1,0 +1,12 @@
+version: "4"
+services:
+  faucet:
+    build: .
+    restart: always
+    container_name: mzc-testnet-faucet
+    volumes:
+      - "./app:/app/"
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=Asia/Shanghai
