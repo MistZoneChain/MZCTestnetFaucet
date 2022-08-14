@@ -10,7 +10,7 @@
     payout: 1,
   };
 
-  $: document.title = `MZC ${capitalize(faucetInfo.network)} Faucet`;
+  $: document.title = `MistZone Chain ${capitalize(faucetInfo.network)} Faucet`;
 
   onMount(async () => {
     const res = await fetch('/api/info');
@@ -68,7 +68,7 @@
               <span class="navbar-item">
                 <a
                   class="button is-white is-outlined"
-                  href="https://github.com/chainflag/eth-faucet"
+                  href="https://github.com/MistZoneChain/MZCTestnetFaucet"
                 >
                   <span class="icon">
                     <i class="fa fa-github" />
@@ -98,7 +98,7 @@
                   bind:value={address}
                   class="input is-rounded"
                   type="text"
-                  placeholder="请输入您的钱包地址"
+                  placeholder="请输入您的账户地址"
                 />
               </p>
               <p class="control">
@@ -119,8 +119,7 @@
 
 <style>
   .hero.is-info {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url('/background.jpg') no-repeat center center fixed;
+    background: url('/background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
